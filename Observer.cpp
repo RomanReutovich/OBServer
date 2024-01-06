@@ -8,7 +8,7 @@
 
 int main()
 {
-    std::string abc = "ABCdef";
+    std::string abc = "ABCDEF";
     std::cout<< abc << "\n" ;
 
     INotifier *a = new KeyEventNotifier;
@@ -19,8 +19,11 @@ int main()
     a->addObserver(*b);
     a->addObserver(*c);
     a->addObserver(*d);
+
     a->notifyObservers(abc);
     a->removeObserver(*c);
-   // a->notifyObservers(abc);
+    a->notifyObservers(abc);
+    a->notifyObservers("A");
+
 }
 
